@@ -11,7 +11,10 @@ import { SearchComponent } from "./search.component";
     ],
     declarations: [
         SearchComponent
-    ],
+    ],/*,
+    declarations: [
+        AppComponent
+    ],*/
     schemas: [
         NO_ERRORS_SCHEMA
     ]
