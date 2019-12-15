@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
 
-import { NoticiasService } from "../domain/noticias.service";
+//import { NoticiasService } from "../domain/noticias.service";
 
 @Component({
     selector: "Search",
@@ -13,7 +13,7 @@ import { NoticiasService } from "../domain/noticias.service";
 })
 export class SearchComponent implements OnInit {
 
-    constructor(private noticias: NoticiasService) {
+    constructor(/*private noticias: NoticiasService*/) {
         // Use the component constructor to inject providers.
     }
 
@@ -25,15 +25,17 @@ export class SearchComponent implements OnInit {
         console.log([1, 2, 3]);
         console.dir([4, 5, 6]);
 
-        if (page.android) {
-            this.noticias.agregar("Hola 1!");
-            this.noticias.agregar("Hola 2!");
-            this.noticias.agregar("Hola 3!");
-      }
-  }
+        //this.noticias.agregar("Hola 1!");
+        //this.noticias.agregar("Hola 2!");
+        //this.noticias.agregar("Hola 3!");
+    }
 
     onDrawerButtonTap(): void {
         const sideDrawer = <RadSideDrawer>app.getRootView();
         sideDrawer.showDrawer();
     }
+
+    //onItemTap(x): void {
+    //      console.dir(x);
+    //}
 }

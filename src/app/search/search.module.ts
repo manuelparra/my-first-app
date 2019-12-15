@@ -3,6 +3,7 @@ import { NativeScriptCommonModule } from "nativescript-angular/common";
 
 import { SearchRoutingModule } from "./search-routing.module";
 import { SearchComponent } from "./search.component";
+import { ListadoComponent } from './../listado/listado.component';
 
 @NgModule({
     imports: [
@@ -10,7 +11,8 @@ import { SearchComponent } from "./search.component";
         SearchRoutingModule
     ],
     declarations: [
-        SearchComponent
+        SearchComponent,
+        ListadoComponent
     ],/*,
     declarations: [
         AppComponent
