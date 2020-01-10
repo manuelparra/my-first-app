@@ -1,0 +1,27 @@
+<ActionBar>
+    <!--
+    Use this NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <!--
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as side-drawer button in iOS is not possible,
+    because its functions is to always navigate back in the application.
+    -->
+    <ActionItem icon="res:://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem>
+    <Label class="color" text="Comments"></Label>
+</ActionBar>
+
+<StackLayout class="page page__content">
+    <Label class="page page__content"></Label>
+
+    <GridLayout columns="auto, *, auto" rows="auto, 25" verticalAlignment="top" backgroundColor="lightgray">
+        <!--<Image src="~/icon.jpg" rowSpan="2" width="72" height="72" margin="3" verticalAlignment="top"/>-->
+        <Label text="Excelente Hotel!" textWrap="true" col="1" colSpan="2" minHeight="50" fontSize="20" margin="3"></Label>
+        <Label text="Usuario: Carlos Perez" col="1" row="1" fontSize="14" horizontalAlignment="left" verticalAlignment="bottom" margin="3"></Label>
+        <Label text="Puntaje: 4.3" col="2" row="2" color="#10C2B0" fontSize="14" verticalAlignment="bottom" margin="3"></Label>
+    </GridLayout>
+</StackLayout>

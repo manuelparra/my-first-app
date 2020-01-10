@@ -1,25 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { NoticiasService } from "../domain/noticias.service";
+import { HotelesService } from "../domain/hoteles.service";
+import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import { NavigationEnd, Router } from "@angular/router";
 import { RouterExtensions } from "nativescript-angular/router";
+import * as app from "tns-core-modules/application";
 
 import { filter } from "rxjs/operators";
 
 @Component({
-    selector: 'ns-listado',
-    templateUrl: './listado.component.html',
-    styleUrls: ['./listado.component.css']
+    selector: 'ns-hoteles',
+    templateUrl: './hoteles.component.html',
+    styleUrls: ['./hoteles.component.css']
 })
-export class ListadoComponent implements OnInit {
+export class HotelesComponent implements OnInit {
     private _activatedUrl: string;
 
-    constructor(private noticias: NoticiasService, private router: Router, private routerExtensions: RouterExtensions) { }
+    constructor(private hoteles: HotelesService, private router: Router, private routerExtensions: RouterExtensions) { }
 
     ngOnInit(): void {
-        this.noticias.agregar("Hola 1!");
-        this.noticias.agregar("Hola 2!");
-        this.noticias.agregar("Hola 3!");
-        this.noticias.agregar("Hola 4!");
+        this.hoteles.add("Eurobuilding Caracas");
+        this.hoteles.add("Tamanaco International");
+        this.hoteles.add("Renaissanse La Castellana");
 
         this.router.events
         .pipe(filter((event: any) => event instanceof NavigationEnd))
@@ -46,13 +47,14 @@ export class ListadoComponent implements OnInit {
         console.log(args);
         const pullRefresh = args.object;
         setTimeout(function () {
-            this.noticias.agregar("Hola 5!");
-            console.log(this.noticias);
+            this.hoteles.add("Hotel Maruma");
+            console.log(this.hoteles);
             pullRefresh.refreshing = false;
         }, 1000);
-        //setTimeout(() => {
-        //    this.noticias.push("Hola 5!");
-        //    pullRefresh.refreshing = false;
-        //}, 2000);
+    }
+
+    onDrawerButtonTap(): void {
+        const sideDrawer = <RadSideDrawer>app.getRootView();
+        sideDrawer.showDrawer();
     }
 }

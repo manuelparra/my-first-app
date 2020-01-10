@@ -28,6 +28,11 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                     <Label col="1" text="Search" class="p-r-10"></Label>
                 </GridLayout>
 
+                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/hoteles')" (tap)="onNavItemTap('/hoteles')">
+                    <Label col="0" text="&#xf594;" class="nt-icon fas"></Label>
+                    <Label col="1" text="Hoteles" class="p-r-10"></Label>
+                </GridLayout>
+
                 <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/news')" (tap)="onNavItemTap('/news')">
                     <Label col="0" text="&#xf1b2;" class="nt-icon fas"></Label>
                     <Label col="1" text="News" class="p-r-10"></Label>

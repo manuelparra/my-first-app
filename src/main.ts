@@ -3,4 +3,7 @@ import { platformNativeScriptDynamic } from "nativescript-angular/platform";
 
 import { AppModule } from "./app/app.module";
 
+import { registerElement } from "nativescript-angular/element-registry";
+registerElement("PullToRefresh", () => require("@nstudio/nativescript-pulltorefresh").PullToRefresh);
+
 platformNativeScriptDynamic().bootstrapModule(AppModule);

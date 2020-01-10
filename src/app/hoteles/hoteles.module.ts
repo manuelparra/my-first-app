@@ -1,19 +1,19 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptCommonModule } from "nativescript-angular/common";
 
-import { ListadoRoutingModule } from "./listado-routing.module";
-import { ListadoComponent } from "./listado.component";
+import { HotelesRoutingModule } from "./hoteles-routing.module";
+import { HotelesComponent } from "./hoteles.component";
 
 @NgModule({
     imports: [
         NativeScriptCommonModule,
-        ListadoRoutingModule
+        HotelesRoutingModule
     ],
     declarations: [
-        ListadoComponent
+        HotelesComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA
     ]
 })
-export class ListadoModule { }
+export class HotelesModule { }
